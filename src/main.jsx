@@ -1,10 +1,45 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import Root from "./components/Layout/Root.jsx";
+import Home from "./components/Home/Home.jsx";
+import Login from "./components/Login/Login.jsx";
+import Registration from "./components/Registration/Registration.jsx";
+import AllProducts from "./components/AllProducts/AllProducts.jsx";
+import MyExports from "./components/MyExports/MyExports.jsx";
+import MyImports from "./components/MyImports/MyImports.jsx";
+import AddExportRoutes from "./components/AddExportRoutes/AddExportRoutes.jsx";
+import TermsOfUse from "./components/Footer/TermsOfUse.jsx";
+import PrivacyPolicy from "./components/Footer/PrivacyPolicy.jsx";
 
-createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Root,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "login",
+        Component: Login,
+      },
+      { path: "register", Component: Registration },
+      { path: "allProducts", Component: AllProducts },
+      { path: "myExports", Component: MyExports },
+      { path: "myImports", Component: MyImports },
+      { path: "addExportRoutes", Component: AddExportRoutes },
+      { path: "termsOfUse", Component: TermsOfUse },
+      { path: "privacyPolicy", Component: PrivacyPolicy },
+    ],
+  },
+]);
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <RouterProvider router={router}></RouterProvider>
+  </StrictMode>
+);
