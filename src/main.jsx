@@ -14,6 +14,7 @@ import MyImports from "./components/MyImports/MyImports.jsx";
 import AddExportRoutes from "./components/AddExportRoutes/AddExportRoutes.jsx";
 import TermsOfUse from "./components/Footer/TermsOfUse.jsx";
 import PrivacyPolicy from "./components/Footer/PrivacyPolicy.jsx";
+import AuthProvider from "./contexts/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>
 );

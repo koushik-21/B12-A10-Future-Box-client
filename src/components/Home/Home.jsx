@@ -1,11 +1,11 @@
 import React from "react";
+import BannerSlider from "../BannerSlider/BannerSlider";
 
 const Home = () => {
   return (
     <div>
       <title>IEBD-home</title>
-
-      <p>this is your home</p>
+      <BannerSlider></BannerSlider>
     </div>
   );
 };

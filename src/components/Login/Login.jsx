@@ -1,7 +1,9 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Login = () => {
+  const { signInUser } = use(AuthContext);
   return (
     <div>
       <title>IEBD-login</title>
