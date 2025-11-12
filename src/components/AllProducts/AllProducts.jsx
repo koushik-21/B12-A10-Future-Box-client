@@ -12,7 +12,7 @@ const AllProducts = () => {
       <p className="text-center relative z-999 overflow-hidden font-semibold text-gray-700 py-2 md:py-4">
         Our All Products
       </p>
-
+      
       <div>
         <AllProductCard allProductsPromise={allProductsPromise} />
       </div>
