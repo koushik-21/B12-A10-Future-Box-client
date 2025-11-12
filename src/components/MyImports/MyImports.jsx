@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const MyImports = () => {
-  return (
-    <div>
-      <title>IEBD-my Imports</title>
+  const { user } = useContext(AuthContext);
+  const [imports, setImports] = useState([]);
 
-      <p>My imports</p>
+  useEffect(() => {
+    if (!user?.email) return;
+
+    fetch(`http://localhost:3000/imports/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setImports(data))
+      .catch((err) => console.error(err));
+  }, [user]);
+
+  return (
+    <div className="p-4 min-h-screen bg-gray-50">
+      <h1 className="text-2xl font-bold mb-6 text-center">My Imports</h1>
+      <p className="font-semibold">
+        Total imported Products: {imports.length}{" "}
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {imports.length ? (
+          imports.map((item) => (
+            <div key={item._id} className="bg-white p-4 rounded-xl shadow-md">
+              <img
+                src={item.productImage}
+                alt={item.productName}
+                className="w-full h-40 object-cover rounded-lg mb-3"
+              />
+              <h2 className="font-bold text-lg">{item.productName}</h2>
+              <p>Quantity: {item.importQuantity}</p>
+              <p>Price: ${item.price}</p>
+              <p>Origin: {item.originCountry}</p>
+              <p className="text-sm text-gray-500">
+                Imported At: {new Date(item.importedAt).toLocaleString()}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>No imports found.</p>
+        )}
+      </div>
     </div>
   );
 };

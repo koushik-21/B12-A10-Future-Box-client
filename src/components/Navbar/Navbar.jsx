@@ -26,7 +26,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
+    <div className="relative z-999 overflow-hidden">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -48,8 +48,9 @@ const Navbar = () => {
               </svg>
             </div>
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box 
+              z-999 mt-3 w-52 p-2 shadow"
             >
               {navLinks}
             </ul>

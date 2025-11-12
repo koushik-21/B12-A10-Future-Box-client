@@ -14,3 +14,7 @@
   font-weight: bold;
   border-bottom: 2px solid rgb(102, 99, 99);
 }
+.menu {
+  position: relative;
+  z-index: 999;
+}

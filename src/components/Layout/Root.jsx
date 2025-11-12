@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer";
 const Root = () => {
   return (
     <div>
-      {/* <p>this is the root of the project</p> */}
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
@@ -15,3 +14,5 @@ const Root = () => {
 };
 
 export default Root;
+
+//https://youtu.be/DSdyK-CEA5U?si=6rMVGBWwzzEP9ECx

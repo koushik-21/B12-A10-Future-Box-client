@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+// import { div } from "framer-motion/client";
 
 const slides = [
   {
@@ -35,51 +36,53 @@ const BannerSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[300px] overflow-hidden rounded shadow-md">
-      <AnimatePresence>
-        {slides.map(
-          (slide, index) =>
-            index === current && (
-              <motion.div
-                key={slide.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
-                className="absolute w-full h-full"
-              >
-                <img
-                  src={slide.img}
-                  alt={slide.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-10 left-2 md:left-10 text-white bg-black/50 p-4 rounded-lg max-w-lg">
-                  <h2 className="text-xl md:text-3xl font-bold">
-                    {slide.title}
-                  </h2>
-                  <p className="mt-2 text-sm md:text-lg">{slide.subtitle}</p>
-                </div>
-              </motion.div>
-            )
-        )}
-      </AnimatePresence>
+    <div className="relative z-999 overflow-hidden">
+      <div className="relative w-full h-[300px] overflow-hidden rounded shadow-md">
+        <AnimatePresence>
+          {slides.map(
+            (slide, index) =>
+              index === current && (
+                <motion.div
+                  key={slide.id}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                  className="absolute w-full h-full"
+                >
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-10 left-2 md:left-10 text-white bg-black/50 p-4 rounded-lg max-w-lg">
+                    <h2 className="text-xl md:text-3xl font-bold">
+                      {slide.title}
+                    </h2>
+                    <p className="mt-2 text-sm md:text-lg">{slide.subtitle}</p>
+                  </div>
+                </motion.div>
+              )
+          )}
+        </AnimatePresence>
 
-      {/* Navigation Buttons */}
-      <div className="absolute flex justify-between top-1/2  w-full px-4 transform -translate-y-1/2">
-        <button
-          className="btn btn-circle bg-black/40 text-white hover:bg-black/70"
-          onClick={() =>
-            setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
-          }
-        >
-          ❮
-        </button>
-        <button
-          className="btn btn-circle bg-black/40 text-white hover:bg-black/70"
-          onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
-        >
-          ❯
-        </button>
+        {/* Navigation Buttons */}
+        <div className="absolute flex justify-between top-1/2  w-full px-4 transform -translate-y-1/2">
+          <button
+            className="btn btn-circle bg-black/40 text-white hover:bg-black/70"
+            onClick={() =>
+              setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+            }
+          >
+            ❮
+          </button>
+          <button
+            className="btn btn-circle bg-black/40 text-white hover:bg-black/70"
+            onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
+          >
+            ❯
+          </button>
+        </div>
       </div>
     </div>
   );

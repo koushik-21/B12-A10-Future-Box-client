@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
       <title>IEBD-Privacy & Policy</title>
-      <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-8 mt-8">
+      <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-8 mt-0">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
