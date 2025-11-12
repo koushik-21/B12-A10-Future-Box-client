@@ -48,6 +48,9 @@ const ProductDetails = () => {
           title: "Import Successful!",
           text: `${quantity} pcs of ${productName} imported successfully.`,
           confirmButtonColor: "#2563eb",
+        }).then(() => {
+          // ✅ Reload the page after user clicks "OK" on the alert
+          window.location.reload();
         });
         setIsModalOpen(false);
         setQuantity("");
@@ -124,11 +127,12 @@ const ProductDetails = () => {
             <button
               onClick={() => setIsModalOpen(true)}
               disabled={!user}
-              className={`flex-1 py-3 rounded-xl text-white font-semibold transition-all duration-300 ${
-                user
-                  ? "bg-indigo-600 hover:bg-indigo-700 hover:shadow-md"
-                  : "bg-gray-400 cursor-not-allowed"
-              }`}
+              className={`flex-1 py-3 rounded-xl text-white font-semibold 
+                transition-all duration-300 ${
+                  user
+                    ? "bg-indigo-600 hover:bg-indigo-700 hover:shadow-md"
+                    : "bg-gray-400 cursor-not-allowed"
+                }`}
             >
               Import Now
             </button>
