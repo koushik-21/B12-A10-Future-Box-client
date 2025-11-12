@@ -47,7 +47,7 @@ const MyImports = () => {
                     className="btn btn-success text-white"
                     to={`/latestProduct/${item.productId}`}
                   >
-                    See Details
+                    See Detailss
                   </Link>
                 </div>
               </div>
