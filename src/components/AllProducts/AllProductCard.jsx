@@ -2,7 +2,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { use } from "react";
 
 const AllProductCard = ({ allProductsPromise }) => {
-  const products = use(allProductsPromise); // এখন এটা একটা promise
+  const products = use(allProductsPromise);
   console.log(products);
 
   return (
