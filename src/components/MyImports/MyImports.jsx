@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Link } from "react-router";
 
 const MyImports = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,7 @@ const MyImports = () => {
       .catch((err) => console.error(err));
   }, [user]);
 
+  // const handleViewDetails = () => {};
   return (
     <div className="p-4 min-h-screen bg-gray-50">
       <h1 className="text-2xl font-bold mb-6 text-center">My Imports</h1>
@@ -36,6 +38,19 @@ const MyImports = () => {
               <p className="text-sm text-gray-500">
                 Imported At: {new Date(item.importedAt).toLocaleString()}
               </p>
+              <div className="flex justify-between pt-4 ">
+                <div>
+                  <Link className="btn btn-error text-white">Remove</Link>
+                </div>
+                <div>
+                  <Link
+                    className="btn btn-success text-white"
+                    to={`/latestProduct/${item.productId}`}
+                  >
+                    See Details
+                  </Link>
+                </div>
+              </div>
             </div>
           ))
         ) : (

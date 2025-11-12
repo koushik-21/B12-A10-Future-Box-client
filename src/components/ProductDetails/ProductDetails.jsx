@@ -97,7 +97,7 @@ const ProductDetails = () => {
                 />
               ))}
               <span className="ml-2 text-gray-600 font-medium">
-                {rating.toFixed(1)}
+                {rating ? rating.toFixed(1) : "N/A"}
               </span>
             </div>
 
