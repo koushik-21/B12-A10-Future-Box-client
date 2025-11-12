@@ -9,10 +9,10 @@ const AllProducts = () => {
   return (
     <div>
       <title>IEBD - All Products</title>
-      <p className="text-center relative z-999 overflow-hidden font-semibold text-gray-700 py-2 md:py-4">
+      <p className="text-center text-2xl relative z-999 overflow-hidden font-semibold text-gray-500 py-2 md:py-4">
         Our All Products
       </p>
-      
+
       <div>
         <AllProductCard allProductsPromise={allProductsPromise} />
       </div>

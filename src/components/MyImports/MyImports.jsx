@@ -51,7 +51,9 @@ const MyImports = () => {
   // const handleViewDetails = () => {};
   return (
     <div className="p-4 min-h-screen bg-gray-50">
-      <h1 className="text-2xl font-bold mb-6 text-center">My Imports</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-gray-500">
+        My Imports
+      </h1>
       <p className="font-semibold">
         Total imported Products: {imports.length}{" "}
       </p>

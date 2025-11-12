@@ -12,7 +12,7 @@ const Home = () => {
       <BannerSlider></BannerSlider>
 
       {/* latest 6 products */}
-      <p className="py-2 md:py-4 font-semibold text-gray-700 text-center text-2xl">
+      <p className="py-2 md:py-4 font-semibold text-gray-500 text-center text-2xl md:text-3xl">
         Latest Products
       </p>
       <LatestProducts
@@ -20,7 +20,7 @@ const Home = () => {
       ></LatestProducts>
 
       {/* {Offer section} */}
-      <p className="text-center bg-amber-700">
+      <p className="text-center bg-amber-700 mt-4">
         November <span className="text-3xl text-blue-950">11.11</span> Offer For
         Whole Month
       </p>
