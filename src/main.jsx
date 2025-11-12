@@ -18,6 +18,7 @@ import PrivacyPolicy from "./components/Footer/PrivacyPolicy.jsx";
 import AuthProvider from "./contexts/AuthProvider.jsx";
 import ProductDetails from "./components/ProductDetails/ProductDetails.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,21 +30,28 @@ const router = createBrowserRouter([
       { path: "login", Component: Login },
       {
         path: "latestProduct/:id",
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
-        
-        Component: ProductDetails,
+        // Component:  ProductDetails,
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          // fetch(`http://localhost:3000/products/${params.id}`),
+          return fetch(`http://localhost:3000/products/${params.id}`);
+        },
       },
-      // {
-      //   path: "products/:id",
-      //   loader: ({ params }) =>
-      //     fetch(`http://localhost:3000/products/${params.id}`),
-      //   Component: ProductDetails,
-      // },
       { path: "register", Component: Registration },
       { path: "allProducts", Component: AllProducts },
       { path: "myExports", Component: MyExports },
-      { path: "myImports", Component: MyImports },
+      {
+        path: "myImports",
+        element: (
+          <PrivateRoute>
+            <MyImports></MyImports>
+          </PrivateRoute>
+        ),
+      },
       { path: "addExportRoutes", Component: AddExportRoutes },
       { path: "termsOfUse", Component: TermsOfUse },
       { path: "privacyPolicy", Component: PrivacyPolicy },
