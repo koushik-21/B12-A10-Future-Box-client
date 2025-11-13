@@ -43,7 +43,14 @@ const router = createBrowserRouter([
       },
       { path: "register", Component: Registration },
       { path: "allProducts", Component: AllProducts },
-      { path: "myExports", Component: MyExports },
+      {
+        path: "myExports",
+        element: (
+          <PrivateRoute>
+            <MyExports> </MyExports>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "myImports",
         element: (
