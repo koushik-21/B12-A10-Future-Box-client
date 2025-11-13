@@ -37,8 +37,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) => {
-          // fetch(`http://localhost:3000/products/${params.id}`),
-          return fetch(`http://localhost:3000/products/${params.id}`);
+          // fetch(`https://iebd-api-server.vercel.app/products/${params.id}`),
+          return fetch(
+            `https://iebd-api-server.vercel.app/products/${params.id}`
+          );
         },
       },
       { path: "register", Component: Registration },

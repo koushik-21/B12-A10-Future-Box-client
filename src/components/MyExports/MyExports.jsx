@@ -12,7 +12,7 @@ const MyExports = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/products/myexports/${user.email}`)
+    fetch(`https://iebd-api-server.vercel.app/products/myexports/${user.email}`)
       .then((res) => res.json())
       .then((data) => setExportsData(data))
       .catch((err) => console.error(err));
@@ -31,9 +31,12 @@ const MyExports = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:3000/products/${id}`, {
-            method: "DELETE",
-          });
+          const res = await fetch(
+            `https://iebd-api-server.vercel.app/products/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
           const data = await res.json();
 
           if (res.ok) {
@@ -71,7 +74,7 @@ const MyExports = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/products/${selectedProduct._id}`,
+        `https://iebd-api-server.vercel.app/products/${selectedProduct._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

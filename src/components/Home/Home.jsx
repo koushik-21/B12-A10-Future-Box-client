@@ -1,9 +1,9 @@
 import React from "react";
 import BannerSlider from "../BannerSlider/BannerSlider";
 import LatestProducts from "../LatestProducts/LatestProducts";
-const latestProductsPromise = fetch("http://localhost:3000/latestProduct").then(
-  (res) => res.json()
-);
+const latestProductsPromise = fetch(
+  "https://iebd-api-server.vercel.app/latestProduct"
+).then((res) => res.json());
 const Home = () => {
   return (
     <div>

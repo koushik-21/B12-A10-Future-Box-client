@@ -47,7 +47,7 @@ const Registration = () => {
 
             // Save user to backend
             const newUser = { name, email, photoURL, password };
-            fetch("http://localhost:3000/users", {
+            fetch("https://iebd-api-server.vercel.app/users", {
               method: "POST",
               headers: { "content-type": "application/json" },
               body: JSON.stringify(newUser),
@@ -98,7 +98,7 @@ const Registration = () => {
         setUser(result.user);
 
         // Save user to backend
-        fetch("http://localhost:3000/users", {
+        fetch("https://iebd-api-server.vercel.app/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(googleUser),

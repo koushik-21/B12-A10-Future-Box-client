@@ -34,7 +34,7 @@ const ProductDetails = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/import", {
+      const res = await fetch("https://iebd-api-server.vercel.app/import", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(importData),

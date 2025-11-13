@@ -9,7 +9,7 @@ const MyImports = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/imports/${user.email}`)
+    fetch(`https://iebd-api-server.vercel.app/imports/${user.email}`)
       .then((res) => res.json())
       .then((data) => setImports(data))
       .catch((err) => console.error(err));
@@ -27,9 +27,12 @@ const MyImports = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:3000/imports/${id}`, {
-            method: "DELETE",
-          });
+          const res = await fetch(
+            `https://iebd-api-server.vercel.app/imports/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
 
           const data = await res.json();
 

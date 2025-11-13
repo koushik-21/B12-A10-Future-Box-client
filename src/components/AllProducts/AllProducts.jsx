@@ -1,9 +1,9 @@
 import React from "react";
 import AllProductCard from "./AllProductCard";
 
-const allProductsPromise = fetch("http://localhost:3000/products").then((res) =>
-  res.json()
-);
+const allProductsPromise = fetch(
+  "https://iebd-api-server.vercel.app/products"
+).then((res) => res.json());
 
 const AllProducts = () => {
   return (

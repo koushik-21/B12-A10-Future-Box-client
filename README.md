@@ -1,6 +1,6 @@
 # IEBD - Import Export Bangladesh
 
-**Website:** [LIVE SITE]()
+**Website:** [LIVE SITE](https://iebd.netlify.app/)
 
 IEBD is a full-stack web application designed to manage import and export products efficiently. Users can add products for export, import products, track inventory, and manage their products with ease.
 
@@ -19,7 +19,7 @@ IEBD is a full-stack web application designed to manage import and export produc
 
 ## Live Demo
 
-Check the live site here: []()
+Check the live site here: [https://iebd.netlify.app/]
 
 ---
 

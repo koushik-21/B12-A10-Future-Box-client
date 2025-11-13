@@ -25,7 +25,7 @@ const AddExportRoutes = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/products", {
+      const res = await fetch("https://iebd-api-server.vercel.app/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
