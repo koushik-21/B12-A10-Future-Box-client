@@ -1,16 +1,33 @@
-# React + Vite
+# IEBD - Import Export Bangladesh
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Website:** [LIVE SITE]()
 
-Currently, two official plugins are available:
+IEBD is a full-stack web application designed to manage import and export products efficiently. Users can add products for export, import products, track inventory, and manage their products with ease.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **User Authentication:** Secure login and registration system.
+- **Add Export Products:** Users can add new products with details like name, image, price, rating, origin country, and available quantity.
+- **My Exports & Imports:** View all exported and imported products, with options to update or delete.
+- **Responsive Design:** Mobile-friendly and responsive UI for smooth user experience.
+- **Real-Time Updates:** Instant updates to the UI when products are added, updated, or deleted.
+- **SweetAlert2 Notifications:** Friendly alerts for actions like adding, updating, or deleting products.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Demo
+
+Check the live site here: []()
+
+---
+
+## Technologies Used
+
+- Frontend: React, Tailwind CSS, React Router, SweetAlert2
+- Backend: Node.js, Express.js
+- Database: MongoDB (Atlas)
+- Authentication: Firebase Authentication
+
+---

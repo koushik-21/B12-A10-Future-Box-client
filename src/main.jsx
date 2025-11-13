@@ -52,7 +52,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      { path: "addExportRoutes", Component: AddExportRoutes },
+      {
+        path: "addExportRoutes",
+        element: (
+          <PrivateRoute>
+            <AddExportRoutes></AddExportRoutes>
+          </PrivateRoute>
+        ),
+      },
       { path: "termsOfUse", Component: TermsOfUse },
       { path: "privacyPolicy", Component: PrivacyPolicy },
     ],
