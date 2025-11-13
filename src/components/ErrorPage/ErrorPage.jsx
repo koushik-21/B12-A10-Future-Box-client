@@ -8,7 +8,7 @@ const ErrorPage = () => {
         Are you lost? 😢
       </h1>
       <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
-        The page you’re looking for doesn’t exist or might have been moved.
+        The page you're looking for doesn't exist or might have been moved.
       </p>
 
       <div className="w-full max-w-md">
